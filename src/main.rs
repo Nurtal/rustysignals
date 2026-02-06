@@ -4,6 +4,17 @@ fn sum_vec(xs: &[i32]) -> i32 {
     xs.iter().sum()
 }
 
+// fonction test pour trouver max d'un gecteur
+fn spot_max(xs:&[i32]) -> i32 {
+    let max = *xs.iter().max().unwrap();
+    max
+}
+
+// fonction test pour trouver min d'un gecteur
+fn spot_min(xs:&[i32]) -> i32 {
+    let min = *xs.iter().min().unwrap();
+    min
+}
 
 fn main() {
 
@@ -24,8 +35,12 @@ fn main() {
     println!("Ce qui nous donne une somme : {}", s);
 
     // Trouver le max
+    let m:i32 = spot_max(&nombres);
+    println!("Avec un max de {}", m);
 
     // Trouver le min
+    let min:i32 = spot_min(&nombres);
+    println!("Et un min de {}", min);
 
     // calcul de la dérivée (pas de temps = 1)
 
