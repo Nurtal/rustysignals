@@ -1,3 +1,10 @@
+
+// fonction test pour calculer la somme d'un vecteur
+fn sum_vec(xs: &[i32]) -> i32 {
+    xs.iter().sum()
+}
+
+
 fn main() {
 
     // tadam 
@@ -11,4 +18,16 @@ fn main() {
     for valeur in nombres.iter() {
         println!("- {}", valeur);
     }
+
+    // calcul la somme
+    let s:i32 = sum_vec(&nombres);
+    println!("Ce qui nous donne une somme : {}", s);
+
+    // Trouver le max
+
+    // Trouver le min
+
+    // calcul de la dérivée (pas de temps = 1)
+
+    // calcul de la dérivée (pas de temps != 1)
 }
