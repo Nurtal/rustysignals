@@ -16,11 +16,34 @@ fn spot_min(xs:&[i32]) -> i32 {
     min
 }
 
+
+// fonction test pour compute une deriver
+fn derive(signal: &[i32]) -> Vec<f32> {
+
+    // si pas assez de point on compute pas
+    if signal.len() < 3 {
+        return Vec::new();
+    }
+
+    let mut result = Vec::with_capacity(signal.len());
+
+    result.push(0.0);
+
+    for i in 1..signal.len() - 1 {
+        result.push((signal[i + 1] - signal[i - 1]) as f32 / 2.0);
+    }
+
+    result.push(0.0);
+
+    result
+
+}
+
 fn main() {
 
     // tadam 
     let i:i32 = 22;
-    let nombres: Vec<i32> = vec![10, 20, 30];
+    let nombres: Vec<i32> = vec![10, 20, 30, 20, 10];
     
     // intro
     println!("Hello Jimmy du {}, ça va faire un bail qu'on a pas fait de language compilé hein ? ", i);
@@ -43,6 +66,9 @@ fn main() {
     println!("Et un min de {}", min);
 
     // calcul de la dérivée (pas de temps = 1)
+    let deriv = derive(&nombres);
+    println!("On peut faire une dérivée {:?}", deriv);
+
 
     // calcul de la dérivée (pas de temps != 1)
 }
