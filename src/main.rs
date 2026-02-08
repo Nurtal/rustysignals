@@ -92,7 +92,7 @@ fn main() {
 
     // FFT
     let spectrum = fft_1d(&signal);
-    println!("calcul d'un FFT")
+    println!("calcul d'un FFT");
     for (i, c) in spectrum.iter().enumerate() {
         println!(
             "bin {:>2} | re = {:>6.3}, im = {:>6.3}, magnitude = {:>6.3}",
